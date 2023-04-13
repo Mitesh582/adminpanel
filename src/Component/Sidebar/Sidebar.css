@@ -1,0 +1,13 @@
+.sidebar{
+    width: 300px;
+    --bs-link-hover-color : #FFF;
+    --bs-link-color : #838fb9 ;
+}
+
+.nav-link:hover{
+    color: var(--bs-link-hover-color);
+}
+
+.navlink::after{
+    position: absolute;
+}
