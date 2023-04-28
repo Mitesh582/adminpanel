@@ -3,11 +3,12 @@ import './Sidebar.css'
 import { Box, ChevronDown, ChevronRight, GearFill, PeopleFill, PersonCircle, PersonFill, Speedometer } from 'react-bootstrap-icons'
 import { Accordion } from 'react-bootstrap';
 import CustomToggle from '../../CustomToggle/CustomToggle';
+import { NavLink } from 'react-router-dom';
 
-function Sidebar() {
+function Sidebar({ show }) {
   return (
     <>
-      <div className='sidebar vh-100 p-2 bg-primary' >
+      <div className={show ? 'sidebar  bg-primary p-2 hide' : 'sidebar vh-100 bg-primary p-2'}>
         <div className='logo p-2'>
           <h2 className='text-center'>
             <a href='#' className='text-white text-decoration-none'>
@@ -22,7 +23,7 @@ function Sidebar() {
           <ul className='list-unstyled'>
             <Accordion defaultActiveKey='0'>
               <li className='p-2'>
-                <a href='#' className='text-decoration-none d-flex align-items-center navlink'>
+                <NavLink to='/' className='text-decoration-none d-flex align-items-center navlink'>
                   <div className='icon col-1'>
                     <Speedometer />
                   </div>
@@ -34,11 +35,11 @@ function Sidebar() {
                   <div className='arrow'>
                     <ChevronRight />
                   </div>
-                </a>
+                </NavLink>
               </li>
               <li className='p-2'>
                 <CustomToggle eventkey='0'>
-                  <a href='#' className='text-decoration-none d-flex align-items-center navlink text-white position-relative'>
+                  <NavLink to='/users' className='text-decoration-none d-flex align-items-center navlink text-white position-relative'>
                     <div className='icon col-1'>
                       <PeopleFill />
                     </div>
@@ -50,12 +51,12 @@ function Sidebar() {
                     <div className='arrow'>
                       <ChevronDown />
                     </div>
-                  </a>
+                  </NavLink>
                 </CustomToggle>
                 <Accordion.Collapse eventkey='1'>
                   <ul className='dropdownMenu list-unstyled p-3'>
                     <li className='p-2'>
-                      <a href='#' className='text-decoration-none d-flex align-items-center navlink'>
+                      <NavLink to='/admin' className='text-decoration-none d-flex align-items-center navlink'>
                         <div className='icon col-1'>
                           <PersonCircle />
                         </div>
@@ -64,10 +65,10 @@ function Sidebar() {
                             Admin
                           </span>
                         </div>
-                      </a>
+                      </NavLink>
                     </li>
                     <li className='p-2'>
-                      <a href='#' className='text-decoration-none d-flex align-items-center navlink'>
+                      <NavLink to='/user' className='text-decoration-none d-flex align-items-center navlink'>
                         <div className='icon col-1'>
                           <PersonFill />
                         </div>
@@ -76,13 +77,13 @@ function Sidebar() {
                             User
                           </span>
                         </div>
-                      </a>
+                      </NavLink>
                     </li>
                   </ul>
                 </Accordion.Collapse>
               </li>
               <li className='p-2'>
-                <a href='#' className='text-decoration-none d-flex align-items-center navlink'>
+                <NavLink to='/product' className='text-decoration-none d-flex align-items-center navlink'>
                   <div className='icon col-1'>
                     <Box />
                   </div>
@@ -91,10 +92,10 @@ function Sidebar() {
                       Product
                     </span>
                   </div>
-                </a>
+                </NavLink>
               </li>
               <li className='p-2'>
-                <a href='#' className='text-decoration-none d-flex align-items-center navlink'>
+                <NavLink to='/setting' className='text-decoration-none d-flex align-items-center navlink'>
                   <div className='icon col-1'>
                     <GearFill />
                   </div>
@@ -103,7 +104,7 @@ function Sidebar() {
                       Setting
                     </span>
                   </div>
-                </a>
+                </NavLink>
               </li>
             </Accordion>
           </ul>

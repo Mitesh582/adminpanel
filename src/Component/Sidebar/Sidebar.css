@@ -2,6 +2,10 @@
     width: 300px;
     --bs-link-hover-color : #FFF;
     --bs-link-color : #838fb9 ;
+    overflow: hidden;
+    transition: all 0.5s;
+    position: fixed;
+
 }
 
 .nav-link:hover{
@@ -10,4 +14,9 @@
 
 .navlink::after{
     position: absolute;
+}
+
+.hide {
+    width: 0;
+    padding: 0 !important;
 }
