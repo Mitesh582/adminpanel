@@ -6,10 +6,13 @@ import Admin from '../Admin/Admin'
 import Product from '../Products/Product'
 import EditProduct from '../EditProduct/EditProduct'
 import './MainContent.css'
+import { useDispatch } from 'react-redux'
+import { GetProductsAsync, getProductsAsync } from '../../Service/Action/ProductAction'
 
 function MainContent({ handleSidebar, handle }) {
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const getLoginDetail = () => {
 
@@ -24,6 +27,8 @@ function MainContent({ handleSidebar, handle }) {
 
   useEffect(() => {
     getLoginDetail();
+    dispatch(getProductsAsync())
+    dispatch(GetProductsAsync())
   }, [])
 
   return (
